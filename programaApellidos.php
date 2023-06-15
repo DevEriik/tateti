@@ -7,6 +7,8 @@ include_once("tateti.php");
 
 /* Apellido, Nombre. Legajo. Carrera. mail. Usuario Github */
 /* Gonzalez Erick Marcelo - Legajo: FAI-3433 - Carrera: TUDW - Mail: erick.gonzalez@est.fi.uncoma.edu.ar - Usuario Git: DevEriik */
+/* */
+/* */
 
 
 
@@ -95,18 +97,18 @@ include_once("tateti.php");
         ];
         $juegos = [];
 
-    $jg1 = ["jugadorCruz" => "ANA", "jugadorCirculo" => "MILO",    "puntosCruz" => 1, "puntosCirculo" => 1];
-    $jg2 = ["jugadorCruz" => "ZEUS",    "jugadorCirculo" => "ANA", "puntosCruz" => 3, "puntosCirculo" => 0];
-    $jg3 = ["jugadorCruz" => "ZEUS",    "jugadorCirculo" => "MILO",    "puntosCruz" => 0, "puntosCirculo" => 4];
-    $jg4 = ["jugadorCruz" => "CARLOS",  "jugadorCirculo" => "TEO",   "puntosCruz" => 1, "puntosCirculo" => 1];
-    $jg5 = ["jugadorCruz" => "ANA", "jugadorCirculo" => "MILO",    "puntosCruz" => 5, "puntosCirculo" => 0];
-    $jg6 = ["jugadorCruz" => "FER",   "jugadorCirculo" => "CARLOS",  "puntosCruz" => 0, "puntosCirculo" => 3];
-    $jg7 = ["jugadorCruz" => "TEO",   "jugadorCirculo" => "ANA", "puntosCruz" => 4, "puntosCirculo" => 0];
-    $jg8 = ["jugadorCruz" => "CARLOS",  "jugadorCirculo" => "TEO",   "puntosCruz" => 1, "puntosCirculo" => 1];
-    $jg9 = ["jugadorCruz" => "TEO",   "jugadorCirculo" => "FER",   "puntosCruz" => 2, "puntosCirculo" => 0];
-    $jg10 = ["jugadorCruz" => "MILO",    "jugadorCirculo" => "ZEUS",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg0 = ["jugadorCruz" => "ANA", "jugadorCirculo" => "MILO",    "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg1 = ["jugadorCruz" => "ZEUS",    "jugadorCirculo" => "ANA", "puntosCruz" => 3, "puntosCirculo" => 0];
+    $jg2 = ["jugadorCruz" => "ZEUS",    "jugadorCirculo" => "MILO",    "puntosCruz" => 0, "puntosCirculo" => 4];
+    $jg3 = ["jugadorCruz" => "CARLOS",  "jugadorCirculo" => "TEO",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg4 = ["jugadorCruz" => "ANA", "jugadorCirculo" => "MILO",    "puntosCruz" => 5, "puntosCirculo" => 0];
+    $jg5 = ["jugadorCruz" => "FER",   "jugadorCirculo" => "CARLOS",  "puntosCruz" => 0, "puntosCirculo" => 3];
+    $jg6 = ["jugadorCruz" => "TEO",   "jugadorCirculo" => "ANA", "puntosCruz" => 4, "puntosCirculo" => 0];
+    $jg7 = ["jugadorCruz" => "CARLOS",  "jugadorCirculo" => "TEO",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg8 = ["jugadorCruz" => "TEO",   "jugadorCirculo" => "FER",   "puntosCruz" => 2, "puntosCirculo" => 0];
+    $jg9 = ["jugadorCruz" => "MILO",    "jugadorCirculo" => "ZEUS",   "puntosCruz" => 1, "puntosCirculo" => 1];
 
-    array_push($juegos, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9, $jg10);
+    array_push($juegos, $jg0, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9);
 
         return $juegos;
     }
@@ -433,7 +435,7 @@ do {
             // Mostrar un juego
             if (count($listaDeJuegos) > 0) {
                 $valor1 = 1;
-                $valor2 = (count($listaDeJuegos) - 1);
+                $valor2 = (count($listaDeJuegos) );
                 $numJuego = validarNumero($valor1, $valor2) - 1;
                 // Mostrar el juego pedido
                 mostrarJuego($numJuego, $listaDeJuegos);
