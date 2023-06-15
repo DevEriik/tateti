@@ -139,7 +139,7 @@ include_once("tateti.php");
 
 /**
  * Este módulo le solicita al usuario un número entre dos valores y si el número es inválido lo pide de vuelta
- * @param int $valor1, $valor2
+ * @param int $valor1, $valor2 aaa
  * @return int
  */
     function validarNumero ($valor1, $valor2) {
