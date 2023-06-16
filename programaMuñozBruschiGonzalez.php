@@ -107,7 +107,8 @@ include_once("tateti.php");
     $jg7 = ["jugadorCruz" => "CARLOS",  "jugadorCirculo" => "TEO",   "puntosCruz" => 1, "puntosCirculo" => 1];
     $jg8 = ["jugadorCruz" => "TEO",   "jugadorCirculo" => "FER",   "puntosCruz" => 2, "puntosCirculo" => 0];
     $jg9 = ["jugadorCruz" => "MILO",    "jugadorCirculo" => "ZEUS",   "puntosCruz" => 1, "puntosCirculo" => 1];
-
+    
+    //El array_push es usado para agregar un elemento al final del arreglo.
     array_push($juegos, $jg0, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9);
 
         return $juegos;
@@ -139,7 +140,7 @@ include_once("tateti.php");
 
 /**
  * Este módulo le solicita al usuario un número entre dos valores y si el número es inválido lo pide de vuelta
- * @param int $valor1, $valor2 aaa
+ * @param int $valor1, $valor2 
  * @return int
  */
     function validarNumero ($valor1, $valor2) {
@@ -295,7 +296,7 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
 /**
  * Este módulo muestra como cartel el resumen del jugador recibiendo el array de la función anterior (resumenJugador)
  * @param array $resumenDelJugador
- * @return void
+ * @return void //Es un tipo de retorno que indica que la funcion no devuelve un valor
  */
     function mostrarResumen($resumenDelJugador) {
 
