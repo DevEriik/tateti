@@ -190,8 +190,8 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
       
       echo " ******************* "."\n"; 
       echo " Juego TATETI : " .$numeroJuego. "  " .$resultado."\n";
-      echo "  Jugador X:" . $nombreX ." obtuvo " .$puntosX ."\n";
-      echo  " Jugador O:" . $nombreO . " obtuvo " .$puntosO. "\n";
+      echo "  Jugador X:" . $nombreX ." obtuvo " .$puntosX ." puntos.\n";
+      echo  " Jugador O:" . $nombreO . " obtuvo " .$puntosO. " puntos.\n";
      echo " *******************"."\n";
     }
 
