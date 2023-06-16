@@ -26,7 +26,7 @@ include_once("tateti.php");
     function cargarJuegos() {
 
         // array $juegos
-        $juegos[0] = [ 
+      /*  $juegos[0] = [ 
             'jugadorCruz' => 'ALAN',
             'jugadorCirculo' => 'ROX',
             'puntosCruz' => '5',
@@ -109,8 +109,22 @@ include_once("tateti.php");
     $jg9 = ["jugadorCruz" => "MILO",    "jugadorCirculo" => "ZEUS",   "puntosCruz" => 1, "puntosCirculo" => 1];
     
     //El array_push es usado para agregar un elemento al final del arreglo.
-    array_push($juegos, $jg0, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9);
+    array_push($juegos, $jg0, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9);*/
+    $juegos = [];
 
+    $jg1 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg2 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "AMARILIS", "puntosCruz" => 3, "puntosCirculo" => 0];
+    $jg3 = ["jugadorCruz" => "ZENDA",    "jugadorCirculo" => "MILOS",    "puntosCruz" => 0, "puntosCirculo" => 4];
+    $jg4 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg5 = ["jugadorCruz" => "AMARILIS", "jugadorCirculo" => "MILOS",    "puntosCruz" => 5, "puntosCirculo" => 0];
+    $jg6 = ["jugadorCruz" => "FEDORA",   "jugadorCirculo" => "CALIXTO",  "puntosCruz" => 0, "puntosCirculo" => 3];
+    $jg7 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "AMARILIS", "puntosCruz" => 4, "puntosCirculo" => 0];
+    $jg8 = ["jugadorCruz" => "CALIXTO",  "jugadorCirculo" => "TRUMAN",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    $jg9 = ["jugadorCruz" => "TRUMAN",   "jugadorCirculo" => "FEDORA",   "puntosCruz" => 2, "puntosCirculo" => 0];
+    $jg10= ["jugadorCruz" => "MILOS",    "jugadorCirculo" => "ZENDA",   "puntosCruz" => 1, "puntosCirculo" => 1];
+    
+    array_push($juegos, $jg1, $jg2, $jg3, $jg4, $jg5, $jg6, $jg7, $jg8, $jg9, $jg10);
+    
         return $juegos;
     }
 
@@ -212,7 +226,8 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
     }
 
 /**
- * Este módulo recibe una colección de juegos y el nombre de un jugador y devuelve el primer juego ganado
+ * Este módulo recibe una colección de juegos y el nombre de un jugador y devuelve el primer juego ganado, $primerGanado
+ * se inicializa en -1, ya que si no existe dicho usuario retorna 0
  * @param array $listaDeJuegos
  * @param string $nombreJugador
  * @return int
@@ -223,7 +238,7 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
         // boolean $bandera
         $i = 0;
         $bandera = true;
-        $primerGanado = -1;
+        $primerGanado = -1; 
         do {
             if ($nombreJugador == $listaDeJuegos[$i]['jugadorCruz'] && ($listaDeJuegos[$i]['puntosCruz'] > $listaDeJuegos[$i]['puntosCirculo'])) {
                 $bandera = false;
@@ -383,14 +398,21 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
 
 /**
  * Este módulo recibe dos arrays y los compara de menor a mayor, retorna -1 si ($a < $b), 1 si ($a > $b) y 0 si ambos son iguales
- * @param array $a, $b
+ * @param array $juegos1 , $juego2
  * @return int
  */
-    function ordenarJugadorCirculo ($a, $b) {
+    function ordenarJugadorCirculo ($juego1, $juego2) {
 
         // int ordJugadorO
          // Usamos la función strcasecmp, que compara dos string y retorna 1 si es mayor, 0 si es igual, -1 si es menor
-        $ordJugadorO = strcasecmp($a['jugadorCirculo'], $b['jugadorCirculo']);
+       // $ordJugadorO = strcasecmp($a['jugadorCirculo'], $b['jugadorCirculo']);
+       if ($juego1 > $juego2) {
+            $ordJugadorO = 1;
+       }elseif($juego1 == $juego2){
+            $ordJugadorO = 0;
+       }else{ // ($juego1 < $juego2)
+            $ordJugadorO = -1;
+       }
         return $ordJugadorO;
     }
 
