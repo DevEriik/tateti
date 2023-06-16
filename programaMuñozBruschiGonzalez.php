@@ -334,6 +334,7 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
             } else {
                 echo "Ingrese un símbolo válido, ya sea X/O: ";
                 $simbolo = trim(fgets(STDIN));
+                $simbolo = strtoupper($simbolo);
             }
         }
         return $simbolo;
