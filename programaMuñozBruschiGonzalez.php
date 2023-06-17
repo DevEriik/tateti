@@ -397,8 +397,8 @@ function mostrarJuegos($listaDeJuegos,$numeroJuego){
     }
 
 /**
- * Este módulo recibe dos arrays y los compara de menor a mayor, retorna -1 si ($a < $b), 1 si ($a > $b) y 0 si ambos son iguales
- * @param array $juegos1 , $juego2
+ * Este módulo recibe dos arrays y los compara de menor a mayor, retorna -1 si ($juego1 < $juego2), 1 si ($juego1 > $juego2) y 0 si ambos son iguales
+ * @param array $juego1 , $juego2
  * @return int
  */
     function ordenarJugadorCirculo ($juego1, $juego2) {
